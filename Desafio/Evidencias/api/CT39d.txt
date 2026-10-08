@@ -1,0 +1,6 @@
+# CT39d
+Requisição: POST /api/pedidos
+Corpo: {"cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"0131010"},"itens":[{"produtoId":"P005","quantidade":1}]}
+Resposta: HTTP/1.1 422 Unprocessable Entity | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe um CEP com 8 dígitos."}]}}
+

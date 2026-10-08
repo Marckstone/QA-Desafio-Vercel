@@ -46,7 +46,7 @@ Garantir que os critérios CA01–CA11 funcionam na UI e na API, que UI e API mo
 - **Cobertura**: compra sem cupom, validação de cliente
 
 ### 3.5 Automação (Playwright)
-3 specs: caminho feliz (CT01), candidato 🤖 (CT10) e regressão de bug encontrado. Ver `Observações finais` em [base.md](../Cenarios/base.md).
+3 specs: caminho feliz (CT01), candidato 🤖 (CT20) e regressão do BUG-001 (CT09). Ver `Observações finais` em [base.md](../Cenarios/base.md).
 
 ---
 

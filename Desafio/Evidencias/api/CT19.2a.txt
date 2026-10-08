@@ -1,0 +1,5 @@
+# CT19.2a
+Requisição: GET /api/xyz
+Resposta: HTTP/1.1 404 Not Found | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"ROTA_NAO_ENCONTRADA","mensagem":"Rota não encontrada."}}
+

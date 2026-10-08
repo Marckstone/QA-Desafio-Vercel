@@ -1,0 +1,9 @@
+    Error: expect(received).toBe(expected) // Object.is equality
+    Expected: true
+    Received: false
+    Error: expect(locator).toHaveText(expected) failed
+    Expected: "Grátis"
+    Received: "R$ 19,90"
+    test-results\bug-001-frete-200-BUG-001--eae2b--200-00-mostra-frete-Grátis\test-failed-1.png
+  2 failed
+  4 passed (23.7s)

@@ -1,0 +1,6 @@
+# CT27
+Requisição: POST /api/carrinho/calcular
+Corpo: {"itens":[{"produtoId":"P003","quantidade":1}]}
+Resposta: HTTP/1.1 200 OK | Content-Type: application/json; charset=utf-8
+{"itens":[{"produtoId":"P003","nome":"Tênis Casual Urbano","precoUnitario":189.9,"quantidade":1,"total":189.9}],"subtotal":189.9,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":10.1,"total":209.8,"cupom":null}
+

@@ -1,0 +1,6 @@
+# CT40c
+Requisição: POST /api/pedidos
+Corpo: {"cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310-100"},"itens":[{"produtoId":"P004","quantidade":1},{"produtoId":"P004","quantidade":1}]}
+Resposta: HTTP/1.1 422 Unprocessable Entity | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"ITEM_DUPLICADO","mensagem":"O produto P004 aparece mais de uma vez.","campo":"itens[1].produtoId"}}
+

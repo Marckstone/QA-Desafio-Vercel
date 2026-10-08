@@ -33,7 +33,7 @@ E o total é R$ 215,73
 
 ### Casos de teste
 
-- **CT01** 🤖 — Caminho feliz: cupom válido sobre carrinho acima de R$ 200 → desconto 10% do subtotal, total R$ 215,73
+- **CT01** 🤖 ✱ — Caminho feliz: cupom válido sobre carrinho acima de R$ 200 → desconto 10% do subtotal, total R$ 215,73
 - **CT02** — Desconto não incide sobre o frete: P005 x1 + BEMVINDO10 → desconto R$ 10,00, frete R$ 19,90, total R$ 109,90
 - **CT02.1** — Valores sem artefato de ponto flutuante (ex.: P001 x3 = R$ 179,70 e 10% = R$ 17,97, sem `…0000001`)
 
@@ -124,7 +124,7 @@ E o valor faltante para frete grátis é <faltante>
 ### Casos de teste
 
 - **CT08** — Abaixo de R$ 200: P005 x1 (R$ 100,00) → frete R$ 19,90, "faltam R$ 100,00"
-- **CT09** 🤖 — Fronteira inclusiva: P005 x2 (R$ 200,00) → frete R$ 0,00, faltante R$ 0,00
+- **CT09** 🤖 ✱ — Fronteira inclusiva: P005 x2 (R$ 200,00) → frete R$ 0,00, faltante R$ 0,00
 - **CT09.1** — Logo abaixo: P001 + P002 (R$ 199,80) → frete R$ 19,90, faltam R$ 0,20
 - **CT10** 🤖 — Frete usa subtotal ANTES do cupom: P005 x2 + BEMVINDO10 (subtotal 200,00 → 180,00 após desconto) mantém frete R$ 0,00; total R$ 180,00
 - **CT10.1** — Subtotal abaixo de R$ 200 + cupom nunca vira frete grátis (P003 + BEMVINDO10: 189,90 − 18,99 + 19,90 = R$ 190,81)
@@ -244,7 +244,7 @@ E cupom.aplicado true
 
 ### Casos de teste
 
-- **CT20** 🤖 — Contrato e valores do exemplo da documentação
+- **CT20** 🤖 ✱ — Contrato e valores do exemplo da documentação
 - **CT21** — Sem campo `cupom`: desconto 0, `cupom` nulo/ausente conforme contrato
 - **CT22** — `cupom` inexistente: 200, desconto 0, `cupom.aplicado=false`, mensagem "Cupom inválido."
 - **CT23** — `VERAO2026`: 200, desconto 0, mensagem "Cupom expirado."
@@ -353,6 +353,6 @@ Então carrinho, dados do cliente e confirmação continuam funcionando
 
 ## Observações finais
 
-- **Automação (3 specs, decididas com o usuário):** (1) caminho feliz → CT01; (2) candidato marcado 🤖 → CT10 (frete sobre subtotal pré-cupom, fronteira R$ 200); (3) **regressão de bug** → o primeiro bug de severidade ≥ Média encontrado na execução, assertando o comportamento *esperado* (a spec falha enquanto o bug existir e vira regressão após a correção). `✱` será marcado aqui quando existir.
+- **Automação (3 specs, decididas com o usuário) — `Desafio/automacao-playwright/tests/`:** (1) caminho feliz → CT01 (`cupom-caminho-feliz.spec.ts`); (2) candidato marcado 🤖 → CT20 (`api-calcular-contrato.spec.ts`; também cobre CT22/CT23); (3) **regressão de bug** → CT09 / BUG-001 (`bug-001-frete-200.spec.ts`), que assertiva o comportamento *esperado* e **falha até a correção**. Nota: CT10 era o candidato inicial, mas depende da fronteira de R$ 200 e por isso cai no BUG-001; passa a ser bom candidato após a correção. Candidatos 🤖 restantes: CT11.1, CT28 (vai falhar até o BUG-002 ser corrigido).
 - Ordem de execução: P0 primeiro (Cenários 1, 3, 5, 6, 8, 10, 12), depois o restante.
 - Lacunas abertas: ver tabela de Decisões de Escopo em [INDICE.md](../INDICE.md).

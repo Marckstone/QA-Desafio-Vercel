@@ -1,0 +1,6 @@
+# CT25b
+Requisição: POST /api/carrinho/calcular
+Corpo: {"itens":[{"produtoId":"P001","quantidade":1},{"produtoId":"P002","quantidade":1}]}
+Resposta: HTTP/1.1 200 OK | Content-Type: application/json; charset=utf-8
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9},{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":1,"total":139.9}],"subtotal":199.8,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0.2,"total":219.7,"cupom":null}
+

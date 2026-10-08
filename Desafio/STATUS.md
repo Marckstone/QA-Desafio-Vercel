@@ -11,28 +11,32 @@
 
 ## Cenários
 
-45 CTs em 14 cenários (ver [base.md](Cenarios/base.md)). Todos ⏳ Pendente. Candidatos a automação (🤖): CT01, CT09, CT10, CT11.1, CT20, CT28.
+45 CTs em 14 cenários ([base.md](Cenarios/base.md)). Resultado detalhado por CT: [Evidencias/evidencias.md](Evidencias/evidencias.md).
 
-| Grupo | CTs | Status |
-|-------|-----|--------|
-| UI cupom/frete/limite (Cen. 1–7) | CT01–CT14.1 | ⏳ Pendente |
-| Checkout (Cen. 8) | CT15–CT17 | ⏳ Pendente |
-| API (Cen. 9–12) | CT18–CT41 | ⏳ Pendente |
-| Integração/Regressão (Cen. 13–14) | CT42–CT45 | ⏳ Pendente |
+| Resultado | CTs |
+|-----------|-----|
+| ✅ Feito (36) | todos os demais |
+| ⚠ Feito com observação (4) | CT03, CT24, CT31 (BUG-003), CT39 |
+| ❌ Falhou — bug (5) | CT09, CT10, CT25 (BUG-001) · CT28, CT40 (BUG-002) |
 
-*Legenda: ⏳ Pendente · 🔄 Em execução · ✅ Feito · ⏸ Pausado · ❌ Cancelado*
+*Legenda: ⏳ Pendente · 🔄 Em execução · ✅ Feito · ⏸ Pausado · ❌ Falhou/cancelado*
+
+Automação (✱): CT01 (feliz), CT20 (candidato 🤖), CT09 (regressão BUG-001). Rodar: ver [automacao-playwright/README.md](automacao-playwright/README.md). Hoje: 4 passam, 2 falham de propósito.
 
 ## Onde parou
 
-- Planejamento concluído (Enunciado, Descricao, Estrategia, Cenarios, INDICE) em 2026-10-08. **Aguardando aprovação do Marcus** para iniciar a execução.
-- Próximo passo: executar API (curl) → UI (navegador embutido) → bugs → 3 specs Playwright → README + evidências. Material de "aula" da API fica fora do repo (pasta local fora do git).
+- Planejamento, execução (API + UI), 3 bugs, 3 specs e documentação **concluídos** em 2026-10-08.
+- **Falta (Marcus):** (1) revisar severidade dos 3 bugs e as observações ⚠; (2) criar o repositório público no GitHub e dar push (`git remote add` + `git push`); (3) preencher o formulário https://elitedev.verzel.com.br/ (usar a seção "Uso de IA" do README raiz, ajustada ao que for verdade); (4) opcional: conferência visual mobile.
+- Material de aula da API: fora do repo, em `C:\Users\Marcus\QA-Desafio-Vercel-aula\`.
 
 ## Massa de teste
 
-- Produtos P001–P008, cupons `BEMVINDO10` e `VERAO2026` (ver [enunciado.md](../Enunciado/enunciado.md)). Ambiente compartilhado, sem estado: nada a limpar.
+- Produtos P001–P008, cupons `BEMVINDO10` e `VERAO2026` ([enunciado.md](../Enunciado/enunciado.md)). Ambiente sem estado: nada a limpar.
 
 ## Bugs abertos
 
 | Link/ID | Resumo | Severidade |
 |------|--------|-----------|
-| — | — | — |
+| [BUG-001](Bug-report/bug-001.md) | Subtotal R$ 200,00 exato cobra frete (CA06) | Alta |
+| [BUG-002](Bug-report/bug-002.md) | API sem limite de 5 unidades (CA10) | Alta |
+| [BUG-003](Bug-report/bug-003.md) | `produtoId` ausente → "Produto undefined" | Baixa |

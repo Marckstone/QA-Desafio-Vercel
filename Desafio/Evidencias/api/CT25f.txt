@@ -1,0 +1,6 @@
+# CT25f
+Requisição: POST /api/carrinho/calcular
+Corpo: {"itens":[{"produtoId":"P001","quantidade":1},{"produtoId":"P004","quantidade":1},{"produtoId":"P008","quantidade":1},{"produtoId":"P006","quantidade":2}]}
+Resposta: HTTP/1.1 200 OK | Content-Type: application/json; charset=utf-8
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9},{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":1,"total":49.9},{"produtoId":"P008","nome":"Garrafa Térmica 750ml","precoUnitario":50,"quantidade":1,"total":50},{"produtoId":"P006","nome":"Kit 3 Pares de Meias","precoUnitario":29.9,"quantidade":2,"total":59.8}],"subtotal":219.6,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":219.6,"cupom":null}
+

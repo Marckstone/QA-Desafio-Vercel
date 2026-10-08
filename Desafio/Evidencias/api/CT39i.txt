@@ -1,0 +1,6 @@
+# CT39i
+Requisição: POST /api/pedidos
+Corpo: {"cliente":{"nome":"Maria 123","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","quantidade":1}]}
+Resposta: HTTP/1.1 201 Created | Content-Type: application/json; charset=utf-8
+{"numero":"VZ-717222","criadoEm":"2026-10-08T12:02:05.882Z","cliente":{"nome":"Maria 123","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+

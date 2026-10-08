@@ -1,0 +1,29 @@
+CHECKOUT url=https://verzel-store.qa-test-verzel-store.workers.dev/checkout
+  - heading "Finalizar compra" [level=1]
+  - link "Voltar ao carrinho":
+  - heading "Dados para entrega" [level=2]
+  - textbox "Nome completo"
+  - textbox "E-mail"
+  - textbox "CEP"
+  - paragraph: Somente números ou no formato 00000-000.
+  - paragraph: O pagamento é feito na entrega.
+  - button "Confirmar pedido"
+    - heading "Resumo do pedido" [level=2]
+    - term: Subtotal
+    - definition: R$ 100,00
+    - term: Desconto (BEMVINDO10)
+    - definition: "- R$ 10,00"
+    - term: Frete
+    - definition: R$ 19,90
+    - term: Total
+    - definition: R$ 109,90
+CT15 -> Pedido confirmado | Pedido VZ-463186 | Obrigado, Maria. Seu pedido foi registrado e o pagamento será feito na entrega. | Itens do pedido | Subtotal | R$ 100,00 | Desconto (BEMVINDO10) | - R$ 10,00 | Frete | R$ 19,90 | Total | R$ 109,90 | 1x Mochila Urbana 20L | R$ 100,00 | Continuar comprando
+CT16 (Maria|maria@exemplo.com|01310100) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | Informe nome e sobrenome. | E-mail | CEP | Somente números ou no formato 00000-000. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00
+CT16.1a (Maria Silva|maria@|01310100) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | E-mail | Informe um e-mail válido. | CEP | Somente números ou no formato 00000-000. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00
+CT16.1b (Maria Silva|maria.com|01310100) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | E-mail | Informe um e-mail válido. | CEP | Somente números ou no formato 00000-000. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00
+CT16.2a (Maria Silva|maria@exemplo.com|0131010) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | E-mail | CEP | Somente números ou no formato 00000-000. | Informe um CEP com 8 dígitos. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00
+CT16.2b (Maria Silva|maria@exemplo.com|013101000) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | E-mail | CEP | Somente números ou no formato 00000-000. | Informe um CEP com 8 dígitos. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00
+CT16.2c (Maria Silva|maria@exemplo.com|0131010a) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | E-mail | CEP | Somente números ou no formato 00000-000. | Informe um CEP com 8 dígitos. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00
+CT16.3 (||) -> Finalizar compra | Voltar ao carrinho | Dados para entrega | Nome completo | Informe o nome completo. | E-mail | Informe o e-mail. | CEP | Somente números ou no formato 00000-000. | Informe o CEP. | O pagamento é feito na entrega. | Confirmar pedido | Resumo do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Moc
+CT15b sem cupom, cep sem hifen -> Pedido confirmado | Pedido VZ-161879 | Obrigado, Maria. Seu pedido foi registrado e o pagamento será feito na entrega. | Itens do pedido | Subtotal | R$ 100,00 | Desconto | R$ 0,00 | Frete | R$ 19,90 | Total | R$ 119,90 | 1x Mochila Urbana 20L | R$ 100,00 | Continuar comprando
+CT17 menções de pagamento: pagamento será feito na entrega. 

@@ -1,0 +1,33 @@
+CT01 | sub=R$ 239,70 desc=- R$ 23,97 frete=Grátis total=R$ 215,73 | ? | Cupom BEMVINDO10 aplicado.
+CT02 | sub=R$ 100,00 desc=- R$ 10,00 frete=R$ 19,90 total=R$ 109,90 | Faltam R$ 100,00 para o frete grátis.
+CT02.1 | sub=R$ 179,70 desc=- R$ 17,97 frete=R$ 19,90 total=R$ 181,63 | Faltam R$ 20,30 para o frete grátis.
+CT03 | entrada="bemvindo10" -> sub=R$ 100,00 desc=- R$ 10,00 frete=R$ 19,90 total=R$ 109,90 | Faltam R$ 100,00 para o frete grátis. | Cupom BEMVINDO10 aplicado.
+CT03a | entrada="BemVindo10" -> sub=R$ 100,00 desc=- R$ 10,00 frete=R$ 19,90 total=R$ 109,90 | Faltam R$ 100,00 para o frete grátis. | Cupom BEMVINDO10 aplicado.
+CT03.1 | entrada="  BEMVINDO10  " -> sub=R$ 100,00 desc=- R$ 10,00 frete=R$ 19,90 total=R$ 109,90 | Faltam R$ 100,00 para o frete grátis. | Cupom BEMVINDO10 aplicado.
+CT03.2 | entrada="BEM VINDO10" -> sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis. | Cupom inválido.
+CT03.3a | entrada="" -> sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis. | (sem mensagem)
+CT03.3b | entrada="   " -> sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis. | (sem mensagem)
+CT04 | sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis. | Cupom inválido.
+CT05 | sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis. | Cupom expirado.
+CT05.1 | apos erro, valido -> sub=R$ 100,00 desc=- R$ 10,00 frete=R$ 19,90 total=R$ 109,90 | Faltam R$ 100,00 para o frete grátis.
+CT06 | campo de cupom visivel com cupom ativo? false | botao Remover cupom: true
+CT07 | apos remover: sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis.
+CT07.1 | troca p/ expirado: sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis. | Cupom expirado.
+CT08 | sub=R$ 100,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 119,90 | Faltam R$ 100,00 para o frete grátis.
+CT09 | SUBTOTAL 200,00 -> sub=R$ 200,00 desc=R$ 0,00 frete=R$ 19,90 total=R$ 219,90 | Faltam R$ 0,00 para o frete grátis.
+CT09.1 | sub=R$ 199,80 desc=R$ 0,00 frete=R$ 19,90 total=R$ 219,70 | Faltam R$ 0,20 para o frete grátis.
+CT09.2 | subtotal 219,80 -> sub=R$ 219,80 desc=R$ 0,00 frete=Grátis total=R$ 219,80 | ?
+CT10 | subtotal 200 + cupom -> sub=R$ 200,00 desc=- R$ 20,00 frete=R$ 19,90 total=R$ 199,90 | Faltam R$ 0,00 para o frete grátis.
+CT10.2 | subtotal 249,70, pos-cupom 224,73 -> sub=R$ 249,70 desc=- R$ 24,97 frete=Grátis total=R$ 224,73 | ?
+CT10.1 | sub=R$ 189,90 desc=- R$ 18,99 frete=R$ 19,90 total=R$ 190,81 | Faltam R$ 10,10 para o frete grátis.
+CT11 | 5 un: sub=R$ 249,50 desc=R$ 0,00 frete=Grátis total=R$ 249,50 | ?
+CT11.1 | botao + habilitado? false | Limite de 5 unidades por produto. 
+CT11.2 | vitrine x7 cliques -> Carrinho | Esvaziar carrinho | Cupom de desconto | Aplicar cupom
+CT11.2b | apos 5 cliques, botao vitrine habilitado? false | texto=Adicionar ao carrinho
+CT11.3 | sub=R$ 399,00 desc=R$ 0,00 frete=Grátis total=R$ 399,00 | ?
+CT13 | apos -1 camiseta: sub=R$ 199,80 desc=R$ 0,00 frete=R$ 19,90 total=R$ 219,70 | Faltam R$ 0,20 para o frete grátis.
+CT13 | apos remover calca: sub=R$ 59,90 desc=R$ 0,00 frete=R$ 19,90 total=R$ 79,80 | Faltam R$ 140,10 para o frete grátis.
+CT13 | apos esvaziar: Seu carrinho está vazio | Escolha um produto na vitrine para começar. | Ver produtos
+CT14 | cupom ativo + qtd 2: sub=R$ 200,00 desc=- R$ 20,00 frete=R$ 19,90 total=R$ 199,90 | Faltam R$ 0,00 para o frete grátis.
+CT14.1 | apos reload: sub=R$ 100,00 desc=- R$ 10,00 frete=R$ 19,90 total=R$ 109,90 | Faltam R$ 100,00 para o frete grátis. | Cupom BEMVINDO10 aplicado.
+CT45 | cards=0

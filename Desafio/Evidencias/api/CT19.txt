@@ -1,0 +1,5 @@
+# CT19
+Requisição: GET /api/produtos/P003
+Resposta: HTTP/1.1 200 OK | Content-Type: application/json; charset=utf-8
+{"id":"P003","nome":"Tênis Casual Urbano","descricao":"Solado de borracha e cabedal em lona.","categoria":"Calçados","preco":189.9}
+

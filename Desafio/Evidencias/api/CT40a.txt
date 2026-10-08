@@ -1,0 +1,6 @@
+# CT40a
+Requisição: POST /api/pedidos
+Corpo: {"cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310-100"},"itens":[{"produtoId":"P004","quantidade":6}]}
+Resposta: HTTP/1.1 201 Created | Content-Type: application/json; charset=utf-8
+{"numero":"VZ-926264","criadoEm":"2026-10-08T12:01:27.833Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":6,"total":299.4}],"subtotal":299.4,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":299.4,"cupom":null}
+

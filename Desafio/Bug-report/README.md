@@ -6,7 +6,9 @@ Esta pasta contém os bugs identificados durante a validação do desafio.
 
 | ID | Arquivo | Título | Severidade | Status |
 |----|---------|--------|------------|--------|
-| BUG-001 | [bug-001.md](bug-001.md) | — | — | 🔴 Aberto |
+| BUG-001 | [bug-001.md](bug-001.md) | Subtotal de exatamente R$ 200,00 cobra frete (CA06) | Alta | 🔴 Aberto |
+| BUG-002 | [bug-002.md](bug-002.md) | API não aplica o limite de 5 unidades (CA10) | Alta | 🔴 Aberto |
+| BUG-003 | [bug-003.md](bug-003.md) | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa | 🔴 Aberto |
 
 ## Estrutura de cada bug report
 

@@ -1,0 +1,6 @@
+# CT29-q5
+Requisição: POST /api/carrinho/calcular
+Corpo: {"itens":[{"produtoId":"P004","quantidade":5}]}
+Resposta: HTTP/1.1 200 OK | Content-Type: application/json; charset=utf-8
+{"itens":[{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":5,"total":249.5}],"subtotal":249.5,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":249.5,"cupom":null}
+

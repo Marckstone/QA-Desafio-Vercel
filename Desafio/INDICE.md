@@ -26,7 +26,7 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 | D4 | Comportamento duvidoso | Contraria CA literal → bug. Lacuna da doc → registro interpretação e sigo | Regra "Ambiguidades" do desafio + escolha do usuário |
 | D5 | CA05 na API | "Um cupom por vez" é verificado só na UI; `/calcular` aceita apenas um campo `cupom` | Contrato da API |
 | D6 | Gherkin | Português, ~45 CTs agrupados por tipo | Enunciado em PT |
-| D7 | Automação | 3 specs: feliz (CT01), candidato 🤖 (CT10), regressão de bug encontrado | Escolha do usuário |
+| D7 | Automação | 3 specs: feliz (CT01), candidato 🤖 (CT20), regressão do BUG-001 (CT09). CT10 foi trocado por CT20: depende da fronteira de R$ 200 e falha pelo BUG-001 | Escolha do usuário; ajuste após a execução |
 | D8 | Marcação de candidatos a automação | Emoji 🤖 no CT + `✱` quando automatizado; regra adicionada à skill `qa-planning` | Prática do repo TruckMe, que não existia aqui (corrigido na fonte) |
 
 ---
@@ -35,7 +35,9 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 
 | ID | Título | Severidade | Status |
 |----|--------|------------|--------|
-| — | Nenhum ainda (execução não iniciada) | — | — |
+| BUG-001 | Subtotal de exatamente R$ 200,00 cobra frete (CA06) | Alta | 🔴 Aberto |
+| BUG-002 | API não aplica o limite de 5 unidades (CA10) | Alta | 🔴 Aberto |
+| BUG-003 | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa | 🔴 Aberto |
 
 ---
 
@@ -43,7 +45,9 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 
 | Bug | Arquivo Bug Report | Arquivo Correção | Causa Raiz |
 |-----|-------------------|------------------|------------|
-| — | — | — | — |
+| BUG-001 | [bug-001.md](Bug-report/bug-001.md) | — (sem correção do dev) | Hipótese: comparação `>` no lugar de `>=` no frete |
+| BUG-002 | [bug-002.md](Bug-report/bug-002.md) | — | Hipótese: `QUANTIDADE_MAXIMA_EXCEDIDA` não implementada na validação de itens |
+| BUG-003 | [bug-003.md](Bug-report/bug-003.md) | — | Hipótese: `produtoId` ausente não é validado antes da busca |
 
 ---
 
@@ -75,13 +79,13 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 
 ## Cenários de Validação (P0)
 
-- [ ] [P0.1] Cupom BEMVINDO10 (Cenário 1)
-- [ ] [P0.2] Cupom inválido/expirado na UI (Cenário 3)
-- [ ] [P0.3] Frete e fronteira R$ 200 (Cenário 5)
-- [ ] [P0.4] Limite de 5 na UI (Cenário 6)
-- [ ] [P0.5] Pedido ponta a ponta (Cenário 8)
-- [ ] [P0.6] `/calcular` (Cenário 10)
-- [ ] [P0.7] `/pedidos` (Cenário 12)
+- [x] [P0.1] Cupom BEMVINDO10 (Cenário 1) ✅
+- [x] [P0.2] Cupom inválido/expirado na UI (Cenário 3)
+- [x] [P0.3] Frete e fronteira R$ 200 (Cenário 5) ❌ BUG-001
+- [x] [P0.4] Limite de 5 na UI (Cenário 6)
+- [x] [P0.5] Pedido ponta a ponta (Cenário 8)
+- [x] [P0.6] `/calcular` (Cenário 10) ❌ BUG-001/BUG-002
+- [x] [P0.7] `/pedidos` (Cenário 12) ❌ BUG-002
 
 ---
 
@@ -91,6 +95,8 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 |-------|--------|--------------|
 | PDF do enunciado era só imagem (sem texto) | Verzel | Extrair as imagens com `pypdf` e ler; guardar o texto em `Enunciado/` |
 | Documentação é SPA (curl não traz conteúdo) | Verzel | Ler via navegador (`get_page_text`) |
+| `curl -w '%{http_code}'` falhou neste Windows (erro 43) | Execução | Usar `curl -i`/`-D arquivo` e ler a 1ª linha (ver `Evidencias/api-run.sh`) |
+| Mais de um bug na mesma regra de fronteira | VZS-142 | Sempre testar o valor exato (200,00) e os vizinhos; um oráculo em centavos isola divergências |
 
 ---
 

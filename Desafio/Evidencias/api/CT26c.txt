@@ -1,0 +1,6 @@
+# CT26c
+Requisição: POST /api/carrinho/calcular
+Corpo: {"itens":[{"produtoId":"P002","quantidade":5},{"produtoId":"P003","quantidade":5},{"produtoId":"P007","quantidade":5}],"cupom":"BEMVINDO10"}
+Resposta: HTTP/1.1 200 OK | Content-Type: application/json; charset=utf-8
+{"itens":[{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":5,"total":699.5},{"produtoId":"P003","nome":"Tênis Casual Urbano","precoUnitario":189.9,"quantidade":5,"total":949.5},{"produtoId":"P007","nome":"Jaqueta Corta-Vento","precoUnitario":229.9,"quantidade":5,"total":1149.5}],"subtotal":2798.5,"desconto":279.85,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":2518.65,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+

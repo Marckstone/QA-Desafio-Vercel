@@ -1,0 +1,5 @@
+# CT35
+Requisição: GET /api/carrinho/calcular
+Resposta: HTTP/1.1 405 Method Not Allowed | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"METODO_NAO_PERMITIDO","mensagem":"O método GET não é permitido nesta rota."}}
+

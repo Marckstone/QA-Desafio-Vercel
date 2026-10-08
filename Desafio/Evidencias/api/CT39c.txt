@@ -1,0 +1,6 @@
+# CT39c
+Requisição: POST /api/pedidos
+Corpo: {"cliente":{"nome":"Maria Silva","email":"maria.com","cep":"01310100"},"itens":[{"produtoId":"P005","quantidade":1}]}
+Resposta: HTTP/1.1 422 Unprocessable Entity | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+

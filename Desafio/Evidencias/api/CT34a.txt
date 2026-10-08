@@ -1,0 +1,6 @@
+# CT34a
+Requisição: POST /api/carrinho/calcular
+Corpo: {"itens":[
+Resposta: HTTP/1.1 400 Bad Request | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"JSON_INVALIDO","mensagem":"O corpo da requisição deve ser um objeto JSON válido."}}
+

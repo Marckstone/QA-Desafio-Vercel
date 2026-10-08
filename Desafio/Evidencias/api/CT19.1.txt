@@ -1,0 +1,5 @@
+# CT19.1
+Requisição: GET /api/produtos/P999
+Resposta: HTTP/1.1 404 Not Found | Content-Type: application/json; charset=utf-8
+{"erro":{"codigo":"PRODUTO_NAO_ENCONTRADO","mensagem":"Produto P999 não encontrado."}}
+

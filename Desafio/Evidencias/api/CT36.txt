@@ -1,0 +1,6 @@
+# CT36
+Requisição: POST /api/pedidos
+Corpo: {"cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310-100"},"itens":[{"produtoId":"P005","quantidade":1}],"cupom":"BEMVINDO10"}
+Resposta: HTTP/1.1 201 Created | Content-Type: application/json; charset=utf-8
+{"numero":"VZ-504181","criadoEm":"2026-10-08T12:01:12.695Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":10,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":109.9,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+
