@@ -42,6 +42,7 @@ Use os arquivos de `Desafio/` como molde; confira contra eles antes de escrever.
 
 Hábitos:
 - Consolide variações de um fluxo em um cenário com sub-casos (`CT08`, `CT08.1`) — caminho feliz vs. exceção/borda.
+- **Marque candidatos a automação:** CT determinístico, de alto valor de regressão e sem dependência externa leva 🤖 depois do ID (`- **CT01** 🤖 — ...`). Quando virar spec, troque/adicione `✱` e cite o spec. Bug encontrado na execução também é candidato: o spec assertia o comportamento *esperado* e passa a ser regressão após a correção. Liste os candidatos no STATUS.
 - **Não invente cenário** para algo que o usuário, como especialista, disser que não existe ou não é testável. Remova.
 - Se o desafio tiver prazo curto, marque **P0** nos cenários que cobrem o fluxo principal e execute esses primeiro.
 

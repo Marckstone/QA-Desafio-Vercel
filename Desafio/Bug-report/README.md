@@ -1,4 +1,4 @@
-# Bug Reports — [ID-DO-DESAFIO]
+# Bug Reports — VZS-142
 
 Esta pasta contém os bugs identificados durante a validação do desafio.
 
