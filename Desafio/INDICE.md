@@ -27,7 +27,7 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 | D5 | CA05 na API | "Um cupom por vez" é verificado só na UI; `/calcular` aceita apenas um campo `cupom` | Contrato da API |
 | D6 | Gherkin | Português, ~45 CTs agrupados por tipo | Enunciado em PT |
 | D7 | Automação | 3 specs: feliz (CT01), candidato 🤖 (CT20), regressão do BUG-001 (CT09). CT10 foi trocado por CT20: depende da fronteira de R$ 200 e falha pelo BUG-001 | Escolha do usuário; ajuste após a execução |
-| D8 | Marcação de candidatos a automação | Emoji 🤖 no CT + `✱` quando automatizado; regra adicionada à skill `qa-planning` | Prática do repo TruckMe, que não existia aqui (corrigido na fonte) |
+| D8 | Marcação de candidatos a automação | Emoji 🤖 no CT + `✱` quando automatizado; regra adicionada à skill `qa-planning` | Convenção ainda não existia neste repo (corrigida na fonte, na skill) |
 
 ---
 
