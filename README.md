@@ -37,8 +37,16 @@ npx playwright test
 
 Resultado esperado hoje: **4 testes passam, 2 falham de propósito** (o spec `bug-001-frete-200` assertiva o comportamento correto e falha enquanto o BUG-001 existir).
 
-## Uso de IA (para o formulário de envio)
+## Uso de IA
 
-Usei o Claude Code com um ecossistema próprio de documentação e skills (`qa-planning`, `salvar-status`), do mesmo método que uso no trabalho. Fluxo: a IA leu o enunciado e a documentação, levantou ambiguidades e eu decidi as interpretações (INDICE → Decisões de Escopo); a IA gerou os artefatos, executou API (curl) e UI (Playwright), escreveu os specs e os bug reports. Eu revisei os cenários, as severidades e as decisões de classificação (bug ou não). As decisões de escopo e a classificação são minhas; os rascunhos e a execução repetitiva foram da IA.
+Usei IA de forma ampla e intencional. Trabalho com um **ecossistema próprio** (documentação versionada + skills de IA), que automatiza o ciclo de planejamento e execução de testes: leitura do enunciado, levantamento de ambiguidades, cenários em Gherkin, estratégia por risco, execução (API com `curl`, UI com Playwright), rascunho de bugs e specs.
+
+- **A IA fez:** a maior parte do trabalho operacional (artefatos, execução repetitiva, evidências, specs).
+- **Eu fiz:** a decisão de usar o método, as decisões de escopo e interpretação das ambiguidades, e a **revisão das partes críticas**: cenários P0, classificação e severidade dos bugs, e o que é ou não bug.
+- **Limitação, com transparência:** por falta de tempo na janela deste teste, a entrega é mais automatizada do que manual e exploratória. Priorizei mostrar o método e a rastreabilidade (critério de aceite → cenário → evidência → bug) a refinar cada texto à mão.
+
+## Direitos e uso
+
+Material autoral produzido para este processo seletivo. © 2026 Marcus Vinícius. Todos os direitos reservados. Autorizo a leitura e a avaliação por quem conduz o processo; não autorizo copiar, reutilizar ou distribuir a estrutura, os textos ou os fluxos fora deste contexto sem permissão.
 
 Instruções para IA: [CLAUDE.md](CLAUDE.md).
