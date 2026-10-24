@@ -25,9 +25,9 @@ Automação (✱): CT01 (feliz), CT20 (candidato 🤖), CT09 (regressão BUG-001
 
 ## Onde parou
 
-- Planejamento, execução (API + UI), 3 bugs, 3 specs e documentação **concluídos** em 2026-10-08.
-- **Falta (Marcus):** (1) revisar severidade dos 3 bugs e as observações ⚠; (2) criar o repositório público no GitHub e dar push (`git remote add` + `git push`); (3) preencher o formulário https://elitedev.verzel.com.br/ (usar a seção "Uso de IA" do README raiz, ajustada ao que for verdade); (4) opcional: conferência visual mobile.
-- Material de aula da API: fora do repo, em `C:\Users\Marcus\QA-Desafio-Vercel-aula\`.
+- Concluído em 2026-10-08: planejamento, execução (API + UI), 3 bugs, 3 specs, documentação. Entrega enviada à Verzel.
+- Em 2026-10-24, após o retorno do processo: severidade e prioridade dos 3 bugs fechadas com justificativa; todos os cenários de `base.md` reescritos em Gherkin (Esquema do Cenário + Exemplos); observações ⚠ decididas em `evidencias.md`.
+- Nada pendente neste desafio.
 
 ## Massa de teste
 
@@ -35,8 +35,8 @@ Automação (✱): CT01 (feliz), CT20 (candidato 🤖), CT09 (regressão BUG-001
 
 ## Bugs abertos
 
-| Link/ID | Resumo | Severidade |
+| Link/ID | Resumo | Severidade · Prioridade |
 |------|--------|-----------|
-| [BUG-001](Bug-report/bug-001.md) | Subtotal R$ 200,00 exato cobra frete (CA06) | Alta |
-| [BUG-002](Bug-report/bug-002.md) | API sem limite de 5 unidades (CA10) | Alta |
-| [BUG-003](Bug-report/bug-003.md) | `produtoId` ausente → "Produto undefined" | Baixa |
+| [BUG-001](Bug-report/bug-001.md) | Subtotal R$ 200,00 exato cobra frete (CA06) | Alta · P1 |
+| [BUG-002](Bug-report/bug-002.md) | API sem limite de 5 unidades (CA10) | Alta · P2 |
+| [BUG-003](Bug-report/bug-003.md) | `produtoId` ausente → "Produto undefined" | Baixa · P3 |

@@ -11,9 +11,9 @@ description: Conduz o planejamento de testes de um desafio/feature de ponta a po
 Planejar "de cabeça" pula duas coisas: (1) checar se o plano contradiz regras já registradas, (2) manter rastreabilidade quando surge fato novo. Este fluxo evita ambas e produz sempre o mesmo formato.
 
 ## Fluxo
-1. Ler a fonte  2. Analisar conflitos/ambiguidades  3. Perguntar  4. Criar artefatos  5. Aguardar aprovação  6. Executar/ajustar  7. Absorver informação nova
+1. Ler a fonte  2. Analisar conflitos/ambiguidades  3. Perguntar  4. Criar artefatos  5. Aguardar aprovação  6. Executar/ajustar  7. Absorver informação nova  8. Gate de entrega
 
-Trate a ordem como default: se o usuário já respondeu uma ambiguidade, não repita a pergunta. **Tempo curto?** Se o usuário disser que está apertado, reduza Estrategia/Cenarios ao essencial, mas **não pule o gate da etapa 2** nem a pergunta da etapa 3.
+Trate a ordem como default: se o usuário já respondeu uma ambiguidade, não repita a pergunta. **Tempo curto?** Se o usuário disser que está apertado, reduza Estrategia/Cenarios ao essencial, mas **não pule o gate da etapa 2**, a pergunta da etapa 3 nem o gate de entrega (etapa 8).
 
 ## 1. Ler a fonte
 - Enunciado em `Enunciado/`, material bruto em `_inbox/`, ou texto colado no chat. Se houver URL/produto real a testar, anote ambiente e versão.
@@ -41,6 +41,7 @@ Use os arquivos de `Desafio/` como molde; confira contra eles antes de escrever.
 - **Cenarios/base.md** — cenários agrupados por tipo em H2 (`## Funcionais`, `## API`, `## Integração`, `## Regressão`, e `## Não funcionais`/`## Acessibilidade`/`## Segurança` se o desafio pedir). Cada cenário: `### Cenário N: Nome`, `### Tipo de teste` (negrito), `### Descrição (BDD)` em bloco `gherkin`, `### Casos de teste` (`CTnn`).
 
 Hábitos:
+- **Gherkin em todos os casos:** nada de CT só em tabela. Dado de entrada/saída em tabela → `Esquema do Cenário` + `Exemplos` (detalhes em `gate-de-entrega.md`).
 - Consolide variações de um fluxo em um cenário com sub-casos (`CT08`, `CT08.1`) — caminho feliz vs. exceção/borda.
 - **Marque candidatos a automação:** CT determinístico, de alto valor de regressão e sem dependência externa leva 🤖 depois do ID (`- **CT01** 🤖 — ...`). Quando virar spec, troque/adicione `✱` e cite o spec. Bug encontrado na execução também é candidato: o spec assertia o comportamento *esperado* e passa a ser regressão após a correção. Liste os candidatos no STATUS.
 - **Não invente cenário** para algo que o usuário, como especialista, disser que não existe ou não é testável. Remova.
@@ -54,6 +55,9 @@ Depois da aprovação, ajude a executar (navegar, montar requisição, inspecion
 
 ## 7. Informação nova no meio do caminho
 Edite Descricao/Estrategia/Cenarios/INDICE já escritos (nota de status, risco reclassificado, CT corrigido) — não deixe só no chat. Inconsistência interna achada ao reler: corrija e avise.
+
+## 8. Gate de entrega (antes de entregar)
+Rode `gate-de-entrega.md`: bugs com severidade + prioridade fechadas e justificadas (sem "sujeito a revisão"), todos os cenários em Gherkin, conferência cruzada. Vale também com tempo curto.
 
 ## Preferências permanentes
 - `INDICE.md` é a espinha dorsal de rastreabilidade.

@@ -4,11 +4,11 @@ Esta pasta contém os bugs identificados durante a validação do desafio.
 
 ## Bugs registrados
 
-| ID | Arquivo | Título | Severidade | Status |
+| ID | Arquivo | Título | Severidade · Prioridade | Status |
 |----|---------|--------|------------|--------|
-| BUG-001 | [bug-001.md](bug-001.md) | Subtotal de exatamente R$ 200,00 cobra frete (CA06) | Alta | 🔴 Aberto |
-| BUG-002 | [bug-002.md](bug-002.md) | API não aplica o limite de 5 unidades (CA10) | Alta | 🔴 Aberto |
-| BUG-003 | [bug-003.md](bug-003.md) | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa | 🔴 Aberto |
+| BUG-001 | [bug-001.md](bug-001.md) | Subtotal de exatamente R$ 200,00 cobra frete (CA06) | Alta · P1 | 🔴 Aberto |
+| BUG-002 | [bug-002.md](bug-002.md) | API não aplica o limite de 5 unidades (CA10) | Alta · P2 | 🔴 Aberto |
+| BUG-003 | [bug-003.md](bug-003.md) | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa · P3 | 🔴 Aberto |
 
 ## Estrutura de cada bug report
 
@@ -24,7 +24,7 @@ Este é o formato realmente usado em todo o repositório (auditado em 2026-09-18
 8. **Resultado atual**: o que está acontecendo, com valores/payloads reais quando aplicável
 9. **Resultado esperado**: o que deveria acontecer
 10. **Impacto**: consequência prática/de negócio se o bug não for corrigido
-11. **Severidade**: checklist Baixa / Média / Alta / Crítica (ver `CLAUDE.md` → Severidade de Bugs)
+11. **Severidade**: checklist Baixa / Média / Alta / Crítica (ver `CLAUDE.md` → Severidade de Bugs) **com justificativa do impacto**; em seguida **Prioridade** (P1/P2/P3: ordem de correção) — fechadas antes da entrega, sem "sujeito a revisão"
 12. **Frequência**: checklist Sempre / Intermitente / Não reproduzido novamente
 13. **Evidências**: prints, logs, payloads de API (link para `evidencias/` quando houver arquivo)
 14. **Análise técnica**: hipótese ou investigação de onde no código o problema está
@@ -94,6 +94,13 @@ Este é o formato realmente usado em todo o repositório (auditado em 2026-09-18
 - [ ] Média
 - [ ] Alta
 - [ ] Crítica
+
+**Justificativa:** [por que este nível — impacto no usuário/negócio e no fluxo]
+
+---
+
+## Prioridade
+- **Prioridade [1/2/3]** — [ordem de correção e por quê]
 
 ---
 

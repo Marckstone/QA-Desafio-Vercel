@@ -2,8 +2,7 @@
 
 Execução de 2026-10-08 · Ambiente: https://verzel-store.qa-test-verzel-store.workers.dev (v2.3.0) · Cenários: [base.md](../Cenarios/base.md)
 
-**Legenda:** ✅ Passou · ❌ Falhou (bug) · ⚠ Passou com observação · 🖐 Manual pendente (Marcus)
-
+**Legenda:** ✅ Passou · ❌ Falhou (bug) · ⚠ Passou com observação · 
 ## Resumo
 
 Contagem por CT principal (CT01–CT45; sub-casos como CT03.1 contam dentro do CT-pai):
@@ -14,7 +13,7 @@ Contagem por CT principal (CT01–CT45; sub-casos como CT03.1 contam dentro do C
 | ⚠ Passou com observação | 4 | CT03, CT24, CT31 (→ BUG-003), CT39 |
 | ❌ Falhou | 5 | CT09, CT10, CT25 (BUG-001) · CT28, CT40 (BUG-002) |
 
-Bugs: [BUG-001](../Bug-report/bug-001.md) (Alta) · [BUG-002](../Bug-report/bug-002.md) (Alta) · [BUG-003](../Bug-report/bug-003.md) (Baixa).
+Bugs: [BUG-001](../Bug-report/bug-001.md) (Alta, P1) · [BUG-002](../Bug-report/bug-002.md) (Alta, P2) · [BUG-003](../Bug-report/bug-003.md) (Baixa, P3).
 
 ## Como foi executado
 
@@ -99,10 +98,18 @@ Scripts em [automacao-playwright/exploracao/](../automacao-playwright/exploracao
 | CT44 | ✅ | Compra sem cupom: total = subtotal + frete (`VZ-161879`) | resultados-checkout.txt |
 | CT45 | ✅ | Vitrine com 8 produtos | [png](ui/CT45-vitrine.png) |
 
-## Pendente / manual (Marcus)
+## Decisões sobre as observações ⚠ (fechadas)
 
-- 🖐 Conferência visual de layout em mobile (não coberta; fora dos CAs).
-- 🖐 Revisar a severidade dos 3 bugs e as observações ⚠ (CT03.3, CT24, CT39) antes do envio.
+Regra aplicada (INDICE, D4): contraria um critério de aceite literal ou a documentação, é bug; é lacuna da documentação, vira interpretação registrada e não bug.
+
+| Observação | Decisão | Motivo |
+|------------|---------|--------|
+| CT03.3: cupom vazio ou só espaços sem mensagem na UI | Não é bug | A documentação não define mensagem para campo vazio; a UI não aplica nada e não quebra |
+| CT24: `""` vira `cupom: null` e `"   "` vira "inválido" na API | Não é bug | Inconsistência menor sem regra violada; sem efeito em valores |
+| CT39: nome com 2 espaços ou número é aceito; sobrenome de 1 letra é rejeitado | Não é bug | A regra pré-existente só diz "nome e sobrenome"; sem critério para o resto |
+| CT31: item sem `produtoId` | **Bug** (BUG-003, Baixa) | A documentação diz que o caso é `ITEM_INVALIDO` |
+
+Fora de escopo e não coberto: conferência visual de layout em celular (não faz parte dos CA01–CA11).
 
 ## Aviso de limite
 

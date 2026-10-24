@@ -33,11 +33,11 @@ Validar a entrega VZS-142 (cupom + frete grátis) em UI e API, reportar bugs e a
 
 ## Bugs Identificados
 
-| ID | Título | Severidade | Status |
-|----|--------|------------|--------|
-| BUG-001 | Subtotal de exatamente R$ 200,00 cobra frete (CA06) | Alta | 🔴 Aberto |
-| BUG-002 | API não aplica o limite de 5 unidades (CA10) | Alta | 🔴 Aberto |
-| BUG-003 | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa | 🔴 Aberto |
+| ID | Título | Severidade | Prioridade | Status |
+|----|--------|------------|------------|--------|
+| BUG-001 | Subtotal de exatamente R$ 200,00 cobra frete (CA06) | Alta | P1 | 🔴 Aberto |
+| BUG-002 | API não aplica o limite de 5 unidades (CA10) | Alta | P2 | 🔴 Aberto |
+| BUG-003 | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa | P3 | 🔴 Aberto |
 
 ---
 

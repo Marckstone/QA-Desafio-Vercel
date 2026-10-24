@@ -20,11 +20,11 @@ Validação da entrega **VZS-142 — cupom de desconto e frete grátis** da Verz
 
 ## Resumo dos bugs
 
-| ID | Resumo | Severidade |
+| ID | Resumo | Severidade · Prioridade |
 |----|--------|-----------|
-| [BUG-001](Desafio/Bug-report/bug-001.md) | Subtotal de exatamente R$ 200,00 cobra frete (CA06 diz "a partir de, inclusive") | Alta |
-| [BUG-002](Desafio/Bug-report/bug-002.md) | API aceita mais de 5 unidades por produto (CA10 vale para UI **e** API) | Alta |
-| [BUG-003](Desafio/Bug-report/bug-003.md) | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa |
+| [BUG-001](Desafio/Bug-report/bug-001.md) | Subtotal de exatamente R$ 200,00 cobra frete (CA06 diz "a partir de, inclusive") | Alta · P1 |
+| [BUG-002](Desafio/Bug-report/bug-002.md) | API aceita mais de 5 unidades por produto (CA10 vale para UI **e** API) | Alta · P2 |
+| [BUG-003](Desafio/Bug-report/bug-003.md) | Item sem `produtoId` → "Produto undefined" em vez de `ITEM_INVALIDO` | Baixa · P3 |
 
 ## Como rodar a automação
 
